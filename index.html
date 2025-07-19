@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Face Recognition Auth</title>
+
+  <!-- ✅ Correct CDN version -->
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="script.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    video {
+      border: 2px solid black;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+    }
+
+    .controls {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" width="720" height="560" autoplay muted></video>
+  <div class="controls">
+    <input type="text" id="nameInput" placeholder="Enter name to register" />
+    <button onclick="registerFace()">Register Face</button>
+    <button onclick="recognizeFace()">Recognize Face</button>
+  </div>
+</body>
+</html>
